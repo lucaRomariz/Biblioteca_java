@@ -16,32 +16,52 @@ public class UsuarioService {
     }
 
     public Usuario cadastrar(Usuario usuario) {
-        return null;
+        return usuarioRepository.salvar(usuario);
     }
 
     public Usuario buscarPorId(int id) {
-        return null;
+        Usuario usuario = usuarioRepository.buscarPorId(id);
+        if(usuario == null) {
+        	throw new RuntimeException("Usuário não encontrado pelo ID fornecido!");
+        }
+        return usuario;
     }
 
     public Usuario buscarPorCpf(String cpf) {
-        return null;
+        Usuario usuario = usuarioRepository.buscarPorCpf(cpf);
+        if(usuario == null) {
+        	throw new RuntimeException("Usuário não encontrado pelo cpf fornecido!");
+        }
+        return usuario;	
     }
 
     public Usuario buscarPorEmail(String email) {
-        return null;
+        Usuario usuario = usuarioRepository.buscarPorEmail(email);
+        if(usuario == null) {
+        	throw new RuntimeException("Usuário não encontrado!");
+        }
+        return usuario;
     }
 
     public List<Usuario> buscarPorNome(String nome) {
-        return null;
+        List<Usuario> usuario = usuarioRepository.buscarPorNome(nome);
+        
+        if(usuario == null) {
+        	throw new RuntimeException("Usuário não encontrado!");
+        }
+        
+        return usuario;
     }
 
     public List<Usuario> listarTodos() {
-        return null;
+        return usuarioRepository.listarTodos();
     }
 
     public void alterar(Usuario usuario) {
+    	usuarioRepository.atualizar(usuario);
     }
 
     public void remover(int id) {
+    	usuarioRepository.deletar(id);
     }
 }

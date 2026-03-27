@@ -16,24 +16,35 @@ public class LivroService {
     }
 
     public Livro cadastrar(Livro livro) {
-        return null;
+        return livroRepository.salvar(livro);
     }
 
     public Livro buscarPorId(int id) {
-        return null;
+        Livro livro = livroRepository.buscarPorId(id);
+        if(livro == null) {
+        	throw new RuntimeException("Usuário não encontrado pelo ID fornecido!");
+        }
+        return livro;
     }
 
     public List<Livro> buscarPorNome(String nome) {
-        return null;
+        List<Livro> livro = livroRepository.buscarPorNome(nome);
+        
+        if(livro == null) {
+        	throw new RuntimeException("Usuário não encontrado pelo nome fornecido!");
+        }
+        return livro;
     }
 
     public List<Livro> listarTodos() {
-        return null;
+    	return livroRepository.listarTodos();
     }
 
     public void alterar(Livro livro) {
+    	livroRepository.atualizar(livro);
     }
 
     public void remover(int id) {
+    	livroRepository.deletar(id);
     }
 }
