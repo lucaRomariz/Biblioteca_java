@@ -23,7 +23,7 @@ public class Main {
 
             if (opcao == 1) {
                 System.out.println("\n--- cadastro de livro ---");
-                System.out.print("digite o ID: ");
+                System.out.print("digite o id: ");
                 int id = scanner.nextInt();
                 scanner.nextLine();
 
