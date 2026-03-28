@@ -12,20 +12,18 @@ public class Main {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("\n1 -- cadastrar um livro");
+            System.out.println("1 -- cadastrar um livro");
             System.out.println("2 -- listar todos os livros");
             System.out.println("3 -- buscar um livro pelo nome");
-            System.out.println("4 -- sair");
+            System.out.println("4 -- sair do sistema");
             System.out.print("escolha entre entre as opções de 1 a 4: ");
 
             int opcao = scanner.nextInt();
-            scanner.nextLine();
 
             if (opcao == 1) {
-                System.out.println("\n--- cadastro de livro ---");
+                System.out.println("cadastro de livro");
                 System.out.print("digite o id: ");
                 int id = scanner.nextInt();
-                scanner.nextLine();
 
                 System.out.print("digite o nome do livro: ");
                 String nome = scanner.nextLine();
@@ -35,7 +33,6 @@ public class Main {
 
                 System.out.print("digite o edição: ");
                 int edicao = scanner.nextInt();
-                scanner.nextLine();
 
                 System.out.print("digite a quantidade: ");
                 int quantidade = scanner.nextInt();
@@ -45,14 +42,14 @@ public class Main {
                 System.out.println("livro cadastrado com sucesso");
 
             } else if (opcao == 2) {
-                System.out.println("\n--- lista de livros ---");
+                System.out.println("lista de livros");
 
                 List<Livro> listaLivros = livroController.listarTodos();
                 for (Livro l : listaLivros) {
                     System.out.println(l.getId() + " - " + l.getNome());
                 }
             } else if (opcao == 3) {
-                System.out.println("\n--- buscar livro ---");
+                System.out.println("buscar livro");
 
                 System.out.print("digite o nome do livro: ");
                 String nomeBusca = scanner.nextLine();
